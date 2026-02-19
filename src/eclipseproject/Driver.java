@@ -3,6 +3,8 @@ package eclipseproject;
 public class Driver {
  public static void n(String[] args) {
 	 System.out.println("Our team is getting started");
-	 Sad.Sad();
+	 Sad.sad();
+	 Glad.glad();
+
  }
 }
