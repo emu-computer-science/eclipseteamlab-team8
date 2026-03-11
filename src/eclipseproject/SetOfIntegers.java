@@ -3,6 +3,7 @@ package eclipseproject;
 public class SetOfIntegers {
 
     public SetOfIntegers() {
+    	
         System.out.println("SetOfIntegers created");
     }
 
