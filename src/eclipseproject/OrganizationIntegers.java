@@ -1,9 +1,16 @@
 package eclipseproject;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.EnumSet;
+
 public class OrganizationIntegers {
 
-    public void increase() {
-        System.out.println("increase not implemented");
+    public void increase(ArrayList<Integer>list) {
+        Collections.sort(list);
+        for(int i :list) {
+        	System.out.print(i+"");
+        }
     }
 
     public void decrease() {

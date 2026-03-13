@@ -1,5 +1,7 @@
 package eclipseproject;
 
+import java.util.ArrayList;
+
 public class SetOfIntegers {
 
     public SetOfIntegers() {
@@ -7,8 +9,7 @@ public class SetOfIntegers {
         System.out.println("SetOfIntegers created");
     }
 
-    public int addElements() {
-        System.out.println("addElements not implemented");
-        return 0;
+    public int addElements(int element) {
+    	return  element;
     }
 }
