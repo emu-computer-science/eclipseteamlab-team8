@@ -6,75 +6,42 @@ public class RunIntegerSets {
 
     public static void main(String[] args) {
     	
-    	Scanner scanner = new Scanner(System.in);
+    	Scanner sc = new Scanner(System.in);
     	
-    	ArrayList<ArrayList<Integer>> sets = new ArrayList<>();
-    	int current = -1;
-    	
-    	while(true) {
+        CollectionSetsOfIntegers collection = new CollectionSetsOfIntegers();
 
-    System.out.print("Select command: (new, show, select, delete, quit): ");
-    	String command = scanner.nextLine();
+        UserInteraction ui = new UserInteraction(collection);
 
-    		  	if (command.equals("new")) {
+        boolean running = true;
 
-    		  	System.out.println("Enter integers:");
-    		  	String[] nums = scanner.nextLine().split(" ");
+        while (running) {
 
-    		  	ArrayList<Integer> set = new ArrayList<>();
+            ui.printPrompt();
 
-    		     for (String n : nums) {
-    		    	 set.add(Integer.parseInt(n));
-    		                }
+            String cmd = sc.nextLine();
 
-    		         sets.add(set);
+            switch (cmd) {
 
-    		         char label = (char)('A' + sets.size() - 1);
-    		         System.out.println("Set " + label + " created: " + set);
-    		            }
+                case "show": ui.show(); break;
+                case "new": ui.create(); break;
+                case "select": ui.select(); break;
+                case "delete": ui.delete(); break;
+                case "sort": ui.sort(); break;
+                case "reverse": ui.reverse(); break;
+                case "randomize": ui.randomize(); break;
+                case "save": ui.save(); break;
+                case "restore": ui.restore(); break;
+                case "help": ui.help(); break;
 
-    		            else if (command.equals("show")) {
+                case "quit":
+                    System.out.println("Thank you");
+                    running = false;
+                    break;
 
-    		                if (sets.size() == 0) {
-    		                    System.out.println("No sets created.");
-    		                }
-
-    		                for (int i = 0; i < sets.size(); i++) {
-
-    		                    char label = (char)('A' + i);
-
-    		                    if (i == current) {
-    		                        System.out.println("*" + label + ": " + sets.get(i));
-    		                    } else {
-    		                        System.out.println(label + ": " + sets.get(i));
-    		                    }
-    		                }
-    		            }
-
-    		            else if (command.equals("select")) {
-
-    		                System.out.print("Enter set letter: ");
-    		                char letter = scanner.nextLine().charAt(0);
-
-    		                current = letter - 'A';
-
-    		                System.out.println("Set " + letter + " selected.");
-    		            }
-
-    		            else if (command.equals("delete")) {
-
-    		                if (current == -1) {
-    		                    System.out.println("No set selected.");
-    		                } else {
-    		                    sets.remove(current);
-    		                    current = -1;
-    		                    System.out.println("Set deleted.");
-    		                }
-    		            }
-
-    		            else if (command.equals("quit")) {
-    		                break;
-    		            }
-    		        }
-    		    }
-    		}
+                default:
+                    System.out.println("Unknown command.");
+                    ui.help();
+            }
+        }
+    }
+}

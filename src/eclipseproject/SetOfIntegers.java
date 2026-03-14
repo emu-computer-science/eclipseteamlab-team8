@@ -1,13 +1,19 @@
 package eclipseproject;
 
-public class SetOfIntegers {
+import java.util.ArrayList;
 
-    public SetOfIntegers() {
-        System.out.println("SetOfIntegers created");
+public class SetOfIntegers {
+	
+	ArrayList<Integer> elements;
+	String state;
+	
+    public SetOfIntegers(ArrayList<Integer> numbers) {
+    	elements = new ArrayList<>(numbers);
+    	state = "random" ;
     }
 
-    public int addElements() {
-        System.out.println("addElements not implemented");
-        return 0;
+    public String toString() {
+    	return "[" + state + "] " + elements;
+   
     }
 }
