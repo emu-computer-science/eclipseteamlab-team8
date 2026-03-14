@@ -3,17 +3,16 @@ package eclipseproject;
 import java.util.ArrayList;
 
 public class SetOfIntegers {
-	
-	ArrayList<Integer> elements;
-	String state;
-	
-    public SetOfIntegers(ArrayList<Integer> numbers) {
-    	elements = new ArrayList<>(numbers);
-    	state = "random" ;
+
+    ArrayList<Integer> elements;
+    String state;
+
+    public SetOfIntegers(ArrayList<Integer> nums) {
+        elements = new ArrayList<>(nums);
+        state = "random";
     }
 
     public String toString() {
-    	return "[" + state + "] " + elements;
-   
+        return "[" + state + "] " + elements;
     }
 }

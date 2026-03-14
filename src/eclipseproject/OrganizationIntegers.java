@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class OrganizationIntegers {
 
-
     public int insertionSort(ArrayList<Integer> list) {
 
         int swaps = 0;

@@ -1,13 +1,13 @@
 package eclipseproject;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class RunIntegerSets {
 
     public static void main(String[] args) {
-    	
-    	Scanner sc = new Scanner(System.in);
-    	
+
+        Scanner sc = new Scanner(System.in);
+
         CollectionSetsOfIntegers collection = new CollectionSetsOfIntegers();
 
         UserInteraction ui = new UserInteraction(collection);
@@ -34,7 +34,7 @@ public class RunIntegerSets {
                 case "help": ui.help(); break;
 
                 case "quit":
-                    System.out.println("Thank you");
+                    System.out.println("Thank you.");
                     running = false;
                     break;
 
